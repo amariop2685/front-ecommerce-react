@@ -1,5 +1,84 @@
+import { useState } from "react";
+
 function Login() {
-    return ( <h1>Login</h1> );
+  const [formulario, setFormulario] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleInputChange = (event) => {
+    setFormulario({
+      formulario,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(formulario);
+  };
+
+  return (
+
+<>
+    <div>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
+  <div className="login">
+    <h2 className="active"> sign in </h2>
+    <h2 className="nonactive"> sign up </h2>
+    <form>
+      <input type="text" className="text" name="username" />
+      <span>username</span>
+      <br />
+      <br />
+      <input type="password" className="text" name="password" />
+      <span>password</span>
+      <br />
+      <input type="checkbox" id="checkbox-1-1" className="custom-checkbox" />
+      <label htmlFor="checkbox-1-1">Keep me Signed in</label>
+      <button className="signin">
+        Sign In
+      </button>
+      <hr />
+      <a href="#">Forgot Password?</a>
+    </form>
+  </div>
+</div>
+
+    
+    <div className='d-flex justify-content-center align-items-center vh-100'>
+    <div className="row text-center">
+      <h3>Login</h3>
+      <form onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label htmlFor="emailInput" className="form-label">Email</label>
+          <input
+            type="email"
+            className="form-control"
+            id="emailInput"
+            name="emailInput"
+            onChange={handleInputChange}
+            value={formulario.email}
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="passwordInput" className="form-label">Password</label>
+          <input
+            type="password"
+            className="form-control"
+            id="passwordInput"
+            name="passwordInput"
+            onChange={handleInputChange}
+            value={formulario.password}
+          />
+        </div>
+        <button type="submit" className="btn btn-primary">Login</button>
+      </form>
+
+    </div>
+  </div>
+</>
+  );
 }
 
 export default Login;
