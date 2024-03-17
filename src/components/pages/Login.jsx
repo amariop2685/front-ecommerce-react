@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { loginService } from "../../services/Auth.services";
 
+
 function Login() {
   const [formulario, setFormulario] = useState({
     email: '',
@@ -9,7 +10,7 @@ function Login() {
 
   const handleInputChange = (event) => {
     setFormulario({
-      formulario,
+      ...formulario,
       [event.target.name]: event.target.value,
     })
   }
