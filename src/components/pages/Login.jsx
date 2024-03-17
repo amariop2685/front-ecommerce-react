@@ -21,6 +21,7 @@ function Login() {
 
     loginService(formulario)
     .then(response => {
+      const token = response.data.data;
       console.log(response);
     }).catch(error => {
       console.error(error);
