@@ -4,8 +4,8 @@ import { loginService } from "../../services/Auth.services";
 
 function Login() {
   const [formulario, setFormulario] = useState({
-    email: '',
-    password: ''
+    email: 'amairop2685@gmail.com',
+    password: 'mario'
   });
 
   const handleInputChange = (event) => {
