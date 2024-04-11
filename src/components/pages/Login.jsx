@@ -4,8 +4,8 @@ import { loginService } from "../../services/Auth.services";
 
 function Login() {
   const [formulario, setFormulario] = useState({
-    email: 'amairop2685@gmail.com',
-    password: 'mario'
+    email: '',
+    password: ''
   });
 
   const handleInputChange = (event) => {
@@ -29,7 +29,7 @@ function Login() {
   }
 
   return (
-    <div className="container">
+    <div className="container page">
         <h1 className="text-center mb-5">Login</h1>
         <form onSubmit={enviarDatos}>
           <div className="mb-3">
